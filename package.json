@@ -1,0 +1,26 @@
+{
+  "name": "api-rest-mongodb-Practica",
+  "version": "0.0.1",
+  "description": "API REST con MongoDB, Express y Node.JS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "MongoDB"
+  ],
+  "author": "@jonmircha",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
+    "express-method-override": "0.0.3",
+    "jade": "^1.9.2",
+    "mongoose": "^4.0.2",
+    "morgan": "^1.5.2",
+    "serve-favicon": "^2.2.0"
+  }
+}

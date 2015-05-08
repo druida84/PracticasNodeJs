@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	section.container
+		div#logo
+		h1
+			a(href="/")=title
+		article.article
+			form.form(method="post", action="/pelicula/#{data[0].movie_id}")
+				fieldset
+					div
+						label(for="id") Id Película:
+						input#id(type="text", name="id", value="#{data[0].movie_id}", disabled, required)
+						input#movie_id(type="hidden", name="movie_id", value="#{data[0].movie_id}", required)
+					div
+						label(for="title") Título:
+						input#title(type="text", name="title", value="#{data[0].title}", required)
+					div
+						label(for="release_year") Año:
+						input#release_year(type="text", name="release_year", value="#{data[0].release_year}", required)
+					div
+						label(for="rating") Calificación:
+						input#rating(type="text", name="rating", value="#{data[0].rating}", required)
+					div
+						label(for="image") Poster:
+						input#image(type="text", name="image", value="#{data[0].image}", required)
+					div
+						input(type="hidden", name="_method", value="put")
+						input.button.edit(type="submit", value="Editar")

@@ -1,0 +1,8 @@
+Tareas restantes:
+
+1)Terminar los estasdos REST
+	get
+	put
+	delete
+
+2)Los datos se guardan en la BD movies Collección movies, hagan que la collección se llame movie

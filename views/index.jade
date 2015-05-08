@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	section.container
+		div#logo
+		h1
+			a(href="/")=title
+		article.article
+		-if(data.length)
+			table.table
+				tr
+					th Id
+					th Título
+					th Año
+					th Calificación
+					th Poster
+					th
+					th
+						form(method="get", action="/pelicula/agregar")
+							input.button.add(type="submit", value="Agregar")
+				-each movie in data
+					tr
+						td #{movie.movie_id}
+						td #{movie.title}
+						td #{movie.release_year}
+						td #{movie.rating}
+						td
+							img.poster(src="#{movie.image}")
+						td 
+							form(method="get", action="/pelicula/#{movie.movie_id}")
+								input.button.edit(type="submit", value="Editar")
+						td
+							form(method="post", action="/pelicula/#{movie.movie_id}" id="#{movie.movie_id}")
+								input.button.delete(type="button", value="Eliminar" onclick="eliminar(this)")
+								input(type="hidden", name="_method", value="delete")
+			script.
+				function eliminar(input)
+				{
+					var deleteOK = confirm("¿Estás seguro de eliminar la película?");
+					return (deleteOK)?input.parentNode.submit():false;
+				}
+		-else
+			div.error No tienes Películas que mostrar
