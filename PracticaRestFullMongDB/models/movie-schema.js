@@ -9,7 +9,7 @@ var mongoose = require("mongoose"),
 		release_year:"string",
 		rating:"string",
 		image:"string"
-	}),
+	},{collection:"movie"}),
 	Movie = mongoose.model("Movie",movieSchema);
 
 mongoose.connect("mongodb://"+conf.mongoDB.host+"/"+conf.mongoDB.database);
